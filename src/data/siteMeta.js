@@ -12,6 +12,7 @@ import logoKubernetes from '@/images/logos/kubernetes.svg'
 import logoCaptainhook from '@/images/logos/captainhook.svg'  
 import logoCrush from '@/images/logos/CrushData.jpeg'
 import logoBlush from '@/images/logos/blush.jpeg'
+import logoLevelData from '@/images/logos/leveldatalogo.jpeg'
 import logoESPN from "@/images/logos/ESPN_E_icon.svg.png"
 const siteMeta = {
     title: "Christian Solis",
@@ -31,15 +32,22 @@ const siteMeta = {
     siteUrl: ""
 }
  export const resume = [
+      {
+      company: 'Level Data',
+      title: 'Senior QA Engineer',
+      logo: logoLevelData,
+      start: '2025',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
     {
       company: 'SchoolMint, Inc.',
       title: 'QA Engineer',
       logo: logoSM,
       start: '2020',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      end: '2025'
     },
     {
       company: 'CrushData, LLC. (Contract)' ,

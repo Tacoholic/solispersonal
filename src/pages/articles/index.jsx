@@ -55,7 +55,7 @@ export default function ArticlesIndex({ articles }) {
             type: "image/jpeg",
           }
         ],
-        siteName: "brian.dev",
+        siteName: "https://christiansolis.netlify.app/",
       }}
     />
       <SimpleLayout
