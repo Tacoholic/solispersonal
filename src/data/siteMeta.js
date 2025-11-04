@@ -34,13 +34,10 @@ const siteMeta = {
  export const resume = [
       {
       company: 'Level Data',
-      title: 'Senior QA Engineer',
+      title: 'QA Engineer',
       logo: logoLevelData,
       start: '2025',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      end: '2025'
     },
     {
       company: 'SchoolMint, Inc.',
