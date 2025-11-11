@@ -185,7 +185,7 @@ function Resume() {
                More on LinkedIn 
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
-      <Button href="https://docs.google.com/document/d/1yeX314MYjGraDidJIghq4hV8b69F47VHQACwfc7n-t4/export?format=pdf" variant="secondary" className="group mt-6 w-full">
+      <Button href="https://docs.google.com/document/d/1TybLeCtJ0hr-7H1Sn4lzt0XnWQP6SDOJ/export?format=pdf" variant="secondary" className="group mt-6 w-full">
                Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
