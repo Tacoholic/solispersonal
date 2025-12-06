@@ -7,7 +7,7 @@ export const meta = {
   date: '2024-02-14',
   title: 'Refactoring Adventures',
   description:
-    'Putting arrays and forEach loops to use in my tests' ,
+    'Using loops to refactor my tests' ,
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
@@ -50,7 +50,7 @@ const formNamesData = [
 ];
 ```
 
-Next, I used a forEach loop to iterate through the _formNamesData_
+Next, I used an each loop to iterate through the _formNamesData_
 ```
 describe("Form Validation", () => {
     const formNamesData = [
@@ -62,18 +62,22 @@ describe("Form Validation", () => {
     "input6",
     "input7",
     "input8"
-];
+  ];
 
 const randomText = ._.times(105, () => _.random(35).toString(36)).join("");
 
-  TestRunner.addTestCase("Inputs cannot surpass 100 characters", () => {
-    formNamesData.forEach((formName) => {
-        HelperMethods.typeTextIntoInput(formName, randomText);
-        cy.get(".error-alert")
-        .should("exist")
-        .and("contain",`${formName} must be shorter than or equal to 100 characters`);
-    })
+TestRunner.addTestCase("Inputs cannot surpass 100 characters", () => {
+  cy.wrap(formNamesData).each((formName) => {
+    HelperMethods.typeTextIntoInput(formName, randomText);
+
+    cy.get(".error-alert")
+      .should("exist")
+      .and(
+        "contain",
+        `${formName} must be shorter than or equal to 100 characters`
+      );
   });
+ });
 });
 
 //Helper Method
@@ -83,8 +87,9 @@ public typeTextIntoInput(formControlName:string, text:string){
 
 ```
 
-So I used a forEach loop to iterate through the formcontrol names on the form.  Within
-that loop, I called on a helper method _typeTextIntoInput()_ that will type text _(randomText)_
+So I used an each loop to iterate through the formcontrol names on the form. I wrapped it first so that 
+each iteration runs sequentially and it waits for all Cypress commands inside the callback to finish. 
+Within that loop, I called on a helper method _typeTextIntoInput()_ that will type text _(randomText)_
 into each text input seperately. Finally, I wrote an assert that checks that the alert is visible and 
 that the text within that alert matches the proper form where the error is ocurring. 
 ## Conclusion
